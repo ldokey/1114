@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라이온 구하기</title>
+    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <style>
+        body {
+            margin: 20px;
+            padding: 20px;
+            background: #f1f1f1;
+            color: #555;
+
+        }
+
+        button {
+            padding: 5px 15px;
+            background: #ccc;
+            color: #000;
+            cursor:pointer;
+            border-radius: 5px;
+            transition: 0.5s;
+        }
+
+        button:hover {
+            background: #888;
+        }
+
+        img {
+            display: block;
+            margin-top: 10px;
+            width: 120px;
+            height: 120px;
+
+        }
+
+        img.moving1 {
+            animation: moving1 1s linear infinite;
+        }
+
+        img.moving2 {
+            animation: moving2 1s linear infinite;
+        }
+
+        @keyframes moving1 {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(800px);
+            }
+        }
+
+        @keyframes moving2 {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(400px);
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <button id="add">add</button>
+    <button id="remove">remove</button>
+    <img src="images/lion.gif" alt="" class="lion" id="lion2">  
+    <img src="images/iu1.jpg" alt="" class="iu">
+    <script>
+        // $(function(){
+        //     $("#add").click(function(){
+        //         $(".lion").addClass("moving1");
+        //         $(".iu").addClass("moving2");
+
+        //     });
+        //     $("#remove").click(function(){
+        //         $(".lion").removeClass("moving1");
+        //         $(".iu").removeClass("moving2");
+
+        //     });
+        // });
+        
+        let addBtn = document.getElementById("add");
+        let removeBtn = document.getElementById("remove");
+        let lion = document.getElementById("lion2")
+
+        addBtn.addEventListener("click",function(){
+            lion.classList.add("moving1");
+        })
+        removeBtn.addEventListener("click", function(){
+            lion.classList.remove("moving1");
+        })
+
+    </script>
+</body>
+</html>
